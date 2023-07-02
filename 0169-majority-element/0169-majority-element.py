@@ -7,18 +7,17 @@ class Solution(object):
         
 
         count = 1
-        majority = nums[0]
-
-        for num in nums[1:]:
-            if num != majority:
-                count -= 1
-                if count == 0:
-                    majority = num
-                    count = 1
+        major = nums[0]
+        
+        for i in nums[1:]:
+            if i != major:
+                count -=1
+                if count ==0:
+                    major = i
+                    count =1
             else:
-                count += 1
-
-        return majority    
+                count+=1
+        return major
         
         
         
