@@ -23,4 +23,19 @@ class Solution(object):
             else:
                 high = mid-1
         return low
+    
+    
+#         while low <high:
+            
+#             mid = low +(high-low)//2
+            
+#             if nums[mid] > nums[mid+1]:
+#                 high = mid
+#             elif nums[mid] > nums[mid-1]:
+#                 low = mid+1
+                
+#         return low
+                
          
+    
+
