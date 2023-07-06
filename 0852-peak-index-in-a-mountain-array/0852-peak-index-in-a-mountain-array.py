@@ -1,28 +1,20 @@
 class Solution(object):
-    def peakIndexInMountainArray(self, arr):
+    def peakIndexInMountainArray(self, nums):
         """
         :type arr: List[int]
         :rtype: int
         """
         
         
-        low = 0
-        high = len(arr)-1
-        
-        while low <=high:
-            
-            mid = low + (high-low)//2
-            if arr[mid]>=arr[mid-1] and arr[mid]>=arr[mid+1]:
-                return mid
-            
-            if arr[mid] > arr[mid+1]: #decreasing part of array, look in left
-                high = mid-1  #checking the left half of the array for greater element
-                
-            elif arr[mid] < arr[mid+1]: #look in right
-                low = mid +1 #checking the right half or array for greater
-                
-#         return low
-            
-            
-            
-        
+        low =0
+        high= len(nums)-1
+
+        while low <  high:
+            mid= low +(high-low)//2
+
+            if nums[mid] < nums[mid+1]:  #look in the right half
+                low = mid+1
+            elif nums[mid] > nums[mid+1]: #look in the left half
+                high = mid
+        return low
+    
