@@ -11,19 +11,13 @@ class Solution(object):
         while low <  high:
             mid= low +(high-low)//2
 
-#             if mid ==0:
-#                 return 0 if nums[0] >= nums[1] else 1
-#             if mid == high:
-#                 return high-1 if nums[high-1] >= nums[high-2] else high-2
-
-#             if nums[mid] > nums[mid-1] and nums[mid] > nums[mid+1]:
-#                 return mid
-            if nums[mid] < nums[mid+1]:
+            if nums[mid] < nums[mid+1]:  #look in the right half
                 low = mid+1
-            elif nums[mid] > nums[mid+1]:
+            elif nums[mid] > nums[mid+1]: #look in the left half
                 high = mid
         return low
     
+
     
 
          
