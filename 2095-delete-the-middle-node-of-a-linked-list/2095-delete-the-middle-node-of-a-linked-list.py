@@ -10,32 +10,42 @@ class Solution(object):
         :rtype: Optional[ListNode]
         """
         
+        dummy=ListNode(None,head)
+        fast=head
+        slow=dummy
         
+        while fast and fast.next:
+            slow=slow.next
+            fast=fast.next.next
+        
+        slow.next=slow.next.next
+        return dummy.next
         
         
         
         #using fast and slow pointer
         
-        if not head.next:
-            return None
+#         if not head.next:
+#             return None
         
         
-        slow = fast = head
-        prev = None
+#         slow = fast = head
+#         prev = None
         
-        while fast and fast.next:
-            fast= fast.next.next
-            prev = slow
-            slow = slow.next
+#         while fast and fast.next:
+#             fast= fast.next.next
+#             prev = slow
+#             slow = slow.next
             
         
-        if prev:
-            prev.next = slow.next
-        else:
-            head = slow.next
+#         if prev:
+#             prev.next = slow.next
+#         else:
+#             head = slow.next
             
-        return head
+#         return head
             
+
         
         
         
