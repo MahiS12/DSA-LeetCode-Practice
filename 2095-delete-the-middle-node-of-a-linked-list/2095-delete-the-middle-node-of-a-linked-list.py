@@ -11,32 +11,63 @@ class Solution(object):
         """
         
         
-        curr = head
-        count = 0
-        # dummy = ListNode(0,head)
-    
         
-        while curr:
-            count+=1
-            curr = curr.next
-            
-        if count <=1:
+        
+        
+        #using fast and slow pointer
+        
+        if not head.next:
             return None
-            
-        mid = (count//2)
+        
+        
+        slow = fast = head
         prev = None
-        current = head
-        index = 0
         
-        while current:
-            if index == mid:
-                prev.next = current.next
-                break
-            prev = current
-            current= current.next
-            index+=1
+        while fast and fast.next:
+            fast= fast.next.next
+            prev = slow
+            slow = slow.next
+            
         
+        if prev:
+            prev.next = slow.next
+        else:
+            head = slow.next
+            
         return head
+            
+        
+        
+        
+        
+        
+        #using count
+#         curr = head
+#         count = 0
+        
+#         while curr:
+#             count+=1
+#             curr = curr.next
+            
+#         if count <=1:
+#             return None
+            
+#         mid = (count//2)
+#         prev = None
+#         current = head
+#         index = 0
+        
+#         while current:
+#             if index == mid:
+#                 prev.next = current.next
+#                 break
+#             prev = current
+#             current= current.next
+#             index+=1
+        
+#         return head
+
+    
 
                     
                 
