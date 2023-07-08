@@ -12,7 +12,7 @@ class Solution(object):
         """
         
         
-        if not head:
+        if not head or k ==0:
             return head
         
         curr = head
@@ -24,7 +24,7 @@ class Solution(object):
             
         k = k % count
         
-        if k ==0:
+        if k ==0: 
             return head
         
         left = head
