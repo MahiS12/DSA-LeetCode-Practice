@@ -7,15 +7,21 @@ class Solution(object):
         :rtype: List[int]
         """
         
-        marbles = defaultdict(int)  # Dictionary to store the count of marbles
-
-        # Count the marbles and store their count in the dictionary
-        for num in nums:
-            marbles[num] += 1
+        s = set(nums)
+        
+        for f,t in zip(moveFrom,moveTo):
+            s.remove(f)
+            s.add(t)
+        return sorted(s)
+        
+#         hashmap = defaultdict(int) 
+        
+#         for num in nums:
+#             hashmap[num] += 1
             
-        for i in range(len(moveFrom)):
-            count = marbles[moveFrom[i]]
-            del marbles[moveFrom[i]]
-            marbles[moveTo[i]] += count
+#         for i in range(len(moveFrom)):
+#             count = hashmap[moveFrom[i]]
+#             del hashmap[moveFrom[i]]
+#             hashmap[moveTo[i]] += count
                 
-        return sorted(marbles.keys())
+#         return sorted(hashmap.keys())
