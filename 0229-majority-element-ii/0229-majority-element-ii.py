@@ -28,21 +28,22 @@ class Solution:
         
         count1 = 0
         count2 = 0
+        a = []
         for i in nums:
             if ans1 == i:
                 count1+=1
             
             if ans2 == i:
                 count2+=1
+                
         
-        if count1 > n//3 and count2 > n//3:
-            return [ans1,ans2]
-        elif count2 > n//3:
-            return [ans2]
-        elif count1 > n//3:
-            return [ans1]
-        else:
-            return 
+        if count1 > n//3:
+            a.append(ans1)
+            
+        if count2 > n//3:
+            a.append(ans2)
+            
+        return a
         
             
         
