@@ -5,19 +5,21 @@ class Solution(object):
         :rtype: int
         """
         
-
-        count = 1
-        major = nums[0]
+        count = 0
+        major = 0
         
-        for i in nums[1:]:
-            if i != major:
-                count -=1
-                if count ==0:
-                    major = i
-                    count =1
-            else:
+        for i in range(len(nums)):
+            if count ==0:
+                major = nums[i]
+                
+            if nums[i] == major:
                 count+=1
+            else:
+                count -=1
+        
         return major
+                
+    
         
         
         
