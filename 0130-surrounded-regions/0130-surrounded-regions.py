@@ -27,14 +27,16 @@ class Solution:
         
         #capture surrounded region (o-> x)
         
-        for r in range(rows):
-            for c in range(cols):
-                if board[r][c]=="O":
-                    board[r][c]="X"
+#         for r in range(rows):
+#             for c in range(cols):
+#                 if board[r][c]=="O":
+#                     board[r][c]="X"
         
         #turn all the T back to O
         for r in range(rows):
             for c in range(cols):
                 if board[r][c]=="T":
                     board[r][c]= "O"
+                else:
+                    board[r][c]= "X"
                     
