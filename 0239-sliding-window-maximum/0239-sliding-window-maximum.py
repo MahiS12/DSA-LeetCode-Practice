@@ -10,36 +10,64 @@ class Solution(object):
         res = []
         
         for i in range(len(nums)):
-            
-            #remove elements outside the window
-            while q and q[0] <= i-k:
-                q.popleft()
-                
-            #smaller elements
+
             while q and nums[q[-1]] < nums[i]:
                 q.pop()
-            
-    
-            
+        
+            while q and q[0] <= i -k:
+                q.popleft()
             q.append(i)
-            
-            #add the current max element
+
             if i >= k-1:
                 res.append(nums[q[0]])
         
         return res
         
+#         l = r = 0
+        
+#         while r < len(nums):
+            
+#             #pop smaller values then current element
+            
+#             while q and nums[q[-1]] < nums[r]:
+#                 q.pop()
+            
+#             q.append(r)
+            
+#             if l > q[0]:
+#                 q.popleft()
+            
+#             if (r +1) >= k:
+#                 res.append(nums[q[0]])
+#                 l+=1
+#             r+=1
+        
+#         return res
+
+    
         
         
+#         q = deque()
 #         res = []
-#         for i in range(len(nums) - k + 1):
-#             current_max = float(-inf)
-#             for j in range(i, i + k):
-#                 current_max = max(nums[j], current_max)
-#             res.append(current_max)
+        
+#         for i in range(len(nums)):
+            
+#             #remove elements outside the window
+#             while q and q[0] <= i-k:
+#                 q.popleft()
+                
+#             #smaller elements
+#             while q and nums[q[-1]] < nums[i]:
+#                 q.pop()
+#             q.append(i)
+            
+#             #add the current max element
+#             if i >= k-1:
+#                 res.append(nums[q[0]])
         
 #         return res
         
+
         
         #TLE
 #         arr = []
