@@ -9,27 +9,25 @@ class Solution(object):
         q = deque()
         res = []
         
-        l = r = 0
-        
-        while r < len(nums):
+        for i in range(len(nums)):
             
-            #pop smaller values then current element
-            
-            while q and nums[q[-1]] < nums[r]:
+            #remove elements outside the window
+            while q and q[0] <= i-k:
+                q.popleft()
+                
+            #smaller elements
+            while q and nums[q[-1]] < nums[i]:
                 q.pop()
             
-            q.append(r)
+    
             
-            if l > q[0]:
-                q.popleft()
+            q.append(i)
             
-            if (r +1) >= k:
+            #add the current max element
+            if i >= k-1:
                 res.append(nums[q[0]])
-                l+=1
-            r+=1
         
         return res
-        
         
         
         
