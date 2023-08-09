@@ -17,14 +17,19 @@ int minDepth(struct TreeNode* root){
     x = minDepth(root->left);
     y = minDepth(root->right);
     
-    if ((x==0) ^ (y==0))
-        return (x>y?x:y)+1;
+    // if ((x==0) ^ (y==0))
+    //     return (x>y?x:y)+1;
     
-    if (x> y)
+    if (root->left == NULL)
         return y+1;
     
-    else
+    else if (root->right ==NULL)
         return x+1;
+    
+    return 1 + fmin(x,y);
+    
+    
+    
     
     
 
