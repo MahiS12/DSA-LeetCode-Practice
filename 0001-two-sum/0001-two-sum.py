@@ -7,12 +7,12 @@ class Solution(object):
         """
         
 
-        hashmap={}
-        for i in range(len(nums)):
-            diff=target- nums[i]
-            if diff in hashmap:
-                return [i,hashmap[diff]]
-            hashmap[nums[i]]=i
+        # hashmap={}
+        # for i in range(len(nums)):
+        #     diff=target- nums[i]
+        #     if diff in hashmap:
+        #         return [i,hashmap[diff]]
+        #     hashmap[nums[i]]=i
             
             
         
