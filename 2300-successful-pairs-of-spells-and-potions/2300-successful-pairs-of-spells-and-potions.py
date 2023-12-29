@@ -8,11 +8,10 @@ class Solution:
         for i in spells:
             #binary search
             l,r = 0, len(potions)-1
-            index = len(potions)
+            index = len(potions) # weakest potion value to calculate the count
             
             while l<=r:
                 mid = (l + r) //2 
-                 # weakest potion value to calculate the count
                 
                 if i * potions[mid] >= success:
                     r = mid - 1
