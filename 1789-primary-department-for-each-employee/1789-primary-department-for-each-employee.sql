@@ -6,5 +6,5 @@ Where primary_flag = 'Y' or employee_id in (
     Select employee_id
     from Employee 
     Group by employee_id
-    Having Count(Distinct(department_id)) = 1)
+    Having Count(employee_id) = 1 )
 
