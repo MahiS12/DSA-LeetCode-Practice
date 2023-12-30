@@ -5,32 +5,36 @@ class Solution(object):
         :type k: int
         :rtype: None Do not return anything, modify nums in-place instead.
         """
-        
         n = len(nums)
         
+        k = k%n
         if k ==n or k ==0:
             return
-        temp = [None]*n
+    
+        temp = [None]*n 
+        
+        for i in range(0,n-k):
+            temp[i+k] = nums[i]
+        
+        for i in range(n-k,n):
+            temp[i-n+k] = nums[i]
+        
         for i in range(n):
-            temp[(i+k)%n] = nums[i]
+            nums[i] = temp[i]
+        
+        
+#         n = len(nums)
+        
+#         if k ==n or k ==0:
+#             return
+#         temp = [None]*n
+#         for i in range(n):
+#             temp[(i+k)%n] = nums[i]
             
-        for i in range(n):
-            nums[i]=temp[i]
+#         for i in range(n):
+#             nums[i]=temp[i]
 
-        # n = len(nums)
-        # if k == n or k == 0:
-        #     return
-        # k= k % n
-        # if k > n:
-        #     return
-        # temp= [None]*n
-        # for i in range(n-k):
-        #     temp[i]= nums[i]
-        # for i in range(k):
-        #     nums[i]=nums[i+n-k]
-        # for i in range(k,n):
-        #     nums[i]=temp[i-k]
-            
+
         
 #         def rotate(nums,s,e):
         
