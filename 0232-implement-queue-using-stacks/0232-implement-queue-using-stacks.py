@@ -10,22 +10,31 @@ class MyQueue:
         # s1.append x
         #s2 -> s1
         
-        while len(self.s1) !=0:
-            self.s2.append(self.s1[-1])
-            self.s1.pop()
+#         while len(self.s1) !=0:
+#             self.s2.append(self.s1[-1])
+#             self.s1.pop()
         
-        self.s1.append(x)
+#         self.s1.append(x)
         
-        while len(self.s2) != 0:
-            self.s1.append(self.s2[-1])
-            self.s2.pop()
-        
+#         while len(self.s2) != 0:
+#             self.s1.append(self.s2[-1])
+#             self.s2.pop()
+        self.s1.append(x)   
+    
     def pop(self) -> int:
-        return self.s1.pop()
+        # return self.s1.pop()
+        if not self.s2:
+            while len(self.s1)!=0:
+                self.s2.append(self.s1.pop())
+        return self.s2.pop()
 
     def peek(self) -> int:
-        x = self.s1[-1]
-        return x
+        # x = self.s1[-1]
+        # return x
+        if not self.s2:
+            while len(self.s1)!=0:
+                self.s2.append(self.s1.pop())
+        return self.s2[-1]
     
     def empty(self) -> bool:
         return not self.s1 and not self.s2
