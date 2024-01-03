@@ -6,44 +6,30 @@ class Solution(object):
         :rtype: List[int]
         """
         
-        q = deque()
+        
+        
+        q = deque() #indices
         res = []
-        
-        for i in range(len(nums)):
 
-            while q and nums[q[-1]] < nums[i]:
+        
+        l = r = 0
+        
+        while r <len(nums):
+            
+            while q and nums[r] > nums[q[-1]]:
                 q.pop()
-        
-            while q and q[0] <= i -k:
+            
+            q.append(r)
+            if l > q[0]:
                 q.popleft()
-            q.append(i)
-
-            if i >= k-1:
+            if (r+1) >=k:
                 res.append(nums[q[0]])
-        
+                l+=1
+            r+=1
         return res
+                
         
-#         l = r = 0
-        
-#         while r < len(nums):
-            
-#             #pop smaller values then current element
-            
-#             while q and nums[q[-1]] < nums[r]:
-#                 q.pop()
-            
-#             q.append(r)
-            
-#             if l > q[0]:
-#                 q.popleft()
-            
-#             if (r +1) >= k:
-#                 res.append(nums[q[0]])
-#                 l+=1
-#             r+=1
-        
-#         return res
-
+       
     
         
         
