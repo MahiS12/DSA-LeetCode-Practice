@@ -5,7 +5,7 @@ class Solution(object):
         :rtype: int
         """
         
-        
+        #code 1
         l =1
         r= len(arr)-2
         
@@ -17,8 +17,9 @@ class Solution(object):
                 r = mid-1
             else:
                 return mid
+
         
-        
+#         #code 2
         
 #         low = 0
 #         high = len(arr)-1
@@ -38,19 +39,6 @@ class Solution(object):
 #         return low
 
 
-#         low =0
-#         high= len(nums)-1
-
-#         while low <  high:
-#             mid= low +(high-low)//2
-
-#             if nums[mid] < nums[mid+1]:  #look in the right half
-#                 low = mid+1
-#             elif nums[mid] > nums[mid+1]: #look in the left half
-#                 high = mid
-#         return low
-    
-            
             
             
         
