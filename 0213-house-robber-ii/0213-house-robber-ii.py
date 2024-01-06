@@ -19,7 +19,7 @@ class Solution:
                 nottaken= 0 + dp[i-1]
                 dp[i]= max(taken,nottaken)
                 
-            return dp[len(a)-1]
+            return dp[i]
         
         if len(nums) ==1:
             return nums[0]
