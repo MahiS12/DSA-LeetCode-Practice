@@ -5,7 +5,7 @@ class Solution(object):
         :type amount: int
         :rtype: int
         """
-        dp = [amount+1] *(amount+1)
+        dp = [float("inf")] *(amount+1)
         dp[0]=0
         
         for i in range(1,amount+1):
@@ -14,7 +14,7 @@ class Solution(object):
                     
                     dp[i]= min(dp[i],1+dp[i-c]) #dp[7] = 1+dp[3] if coin 4 is selected
             
-        if dp[amount] != amount+1:
+        if dp[amount] != float("inf"):
             return dp[amount]
         else:
             return -1
