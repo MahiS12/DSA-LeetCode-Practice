@@ -11,18 +11,37 @@ class Solution(object):
         :type k: int
         :rtype: int
         """
-        stack = []
-        curr = root
+        
+        
+        def inorder(root,count,ans):
+            if not root:
+                return
+        
+            inorder(root.left,count,ans)
+            count[0]-=1
+            if count[0]==0:
+                ans[0] = root.val
+                return
+            inorder(root.right,count,ans)
+        
+        ans = [0]
+        count=[k]
+        inorder(root,count,ans)
+        return ans[0]
+        
+        
+#         stack = []
+#         curr = root
 
-        while stack or curr:
-            while curr:
-                stack.append(curr)
-                curr = curr.left
-            curr = stack.pop()
-            k -= 1
-            if k == 0:
-                return curr.val
-            curr = curr.right
+#         while stack or curr:
+#             while curr:
+#                 stack.append(curr)
+#                 curr = curr.left
+#             curr = stack.pop()
+#             k -= 1
+#             if k == 0:
+#                 return curr.val
+#             curr = curr.right
         
     
         
