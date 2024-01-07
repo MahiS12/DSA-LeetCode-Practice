@@ -11,17 +11,32 @@ class Solution(object):
         :type k: int
         :rtype: int
         """
-        global arr
-        arr= []
+        stack = []
+        curr = root
+
+        while stack or curr:
+            while curr:
+                stack.append(curr)
+                curr = curr.left
+            curr = stack.pop()
+            k -= 1
+            if k == 0:
+                return curr.val
+            curr = curr.right
         
-        def inorder(root,arr):
-            if not root:
-                return
+    
+        
+#         global arr
+#         arr= []
+        
+#         def inorder(root,arr):
+#             if not root:
+#                 return
             
-            inorder(root.left,arr)
-            arr.append(root.val)
-            inorder(root.right,arr)
+#             inorder(root.left,arr)
+#             arr.append(root.val)
+#             inorder(root.right,arr)
             
         
-        inorder(root,arr)
-        return arr[k-1]
+#         inorder(root,arr)
+#         return arr[k-1]
