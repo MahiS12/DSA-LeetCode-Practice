@@ -17,7 +17,7 @@ class Solution:
             else:
                 d2[i]=1
                 
-        for j in d1.keys():
+        for j in d1:
             if j in d2:
                 if d1[j] > d2[j]:
                     res+= d1[j]-d2[j]
