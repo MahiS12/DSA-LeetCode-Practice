@@ -35,8 +35,7 @@ class Solution(object):
                 
             elif arr[mid] < arr[mid+1]: #look in right
                 low = mid +1 #checking the right half or array for greater
-                
-        return low
+
 
 
             
