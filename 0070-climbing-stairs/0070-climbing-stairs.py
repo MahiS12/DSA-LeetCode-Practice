@@ -4,19 +4,16 @@ class Solution(object):
         :type n: int
         :rtype: int
         """
-        if n==1 or n==2:
+        if n <= 3:
             return n
-        
-        prev = curr =1
-        
-        for i in range(2,n+1):
-            temp = curr
-            curr=curr+prev
-            prev=temp
-        return curr
-            
-        
-        
+        n1, n2 = 2, 3
+
+        for i in range(4, n + 1):
+            temp = n1 + n2
+            n1 = n2
+            n2 = temp
+        return n2
+     
 #         dp=[0]*(n+1)
 #         dp[1]=1
 #         dp[2]=2
