@@ -1,6 +1,9 @@
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
         
+#         if len(s) != len(t):
+# 2 dictionary equal
+        
         if len(s)!= len(t):
             return False
         
@@ -16,7 +19,14 @@ class Solution:
             if i in count:
                 count[i]-=1
             else:
-                count[i]=1
+                return False
         
         
-        return sum(value == 0 for value in count.values()) == len(count)
+        for key in count.keys():
+            if count[key]!=0:
+                return False
+        
+        return True
+        
+
+        
