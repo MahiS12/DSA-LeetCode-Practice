@@ -13,12 +13,7 @@ class Solution:
             stack.append(i)
         
         return res
-                
-        
-        
-        
-        
-        
+                 
 
 #         res = [0] * len(temperatures)  # Initialize with 0s
     
