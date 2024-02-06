@@ -12,3 +12,5 @@ class Solution:
                 anagram_dict[sort_word]=[i]
         
         return anagram_dict.values()
+    
+    
