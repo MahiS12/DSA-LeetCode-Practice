@@ -18,13 +18,21 @@ class Solution(object):
                 count -=1
         
         return major
-                
     
         
+#                 n = len(nums)
+#         m = {}
         
+#         for num in nums:
+#             m[num] += 1
         
+#         n = n // 2
+#         for key, value in m.items():
+#             if value > n:
+#                 return key
         
-        
+#         return 0
+            
         
         
         
